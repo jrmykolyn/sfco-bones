@@ -1,0 +1,11 @@
+{
+  "name": "sfco-bones",
+  "version": "1.0.0",
+  "description": "Short Future Co. - Bones, a project dir. structure for front-end development.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jesse R Mykolyn",
+  "license": "ISC"
+}
