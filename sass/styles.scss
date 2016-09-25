@@ -1,3 +1,9 @@
+// IMPORT MODULES
+@import 'normalize';
+@import 'bourbon';
+@import 'susy';
+
+// IMPORT PROJECT STYLES
 @import 'config/manifest';
 @import 'vendor/manifest';
 @import 'base/manifest';
