@@ -12,7 +12,16 @@ gulp.task( 'sass', function() {
     console.log( 'INSIDE TASK: `sass`' );
 
     return gulp.src( 'sass/styles.scss' )
-        .pipe( sass( { outputStyle: 'expanded' } ) )
+        .pipe( sass(
+            {
+                outputStyle: 'expanded',
+                includePaths: [
+                    'node_modules/normalize.css',
+                    'node_modules/bourbon/app/assets/stylesheets',
+                    'node_modules/susy/sass'
+                ]
+            }).on( 'error', sass.logError )
+        )
         .pipe( gulp.dest( 'css/' ) ); 
 } );
 

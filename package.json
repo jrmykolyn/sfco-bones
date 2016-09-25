@@ -9,7 +9,10 @@
   "author": "Jesse R Mykolyn",
   "license": "ISC",
   "devDependencies": {
+    "bourbon": "^4.2.7",
     "gulp": "^3.9.1",
-    "gulp-sass": "^2.3.2"
+    "gulp-sass": "^2.3.2",
+    "normalize.css": "^4.2.0",
+    "susy": "^2.2.12"
   }
 }
