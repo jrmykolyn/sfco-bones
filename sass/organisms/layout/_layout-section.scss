@@ -1,0 +1,84 @@
+// ------------------------------------------------------------
+// PLACEHOLDERS
+// ------------------------------------------------------------
+/**
+ * ...
+*/
+%__full-grid-base {
+    @include container;
+
+    margin: 0 auto;
+}
+
+
+/**
+ * ...
+*/
+%__inset-grid-base {
+    @include container( gridWidth( "max" ) );
+
+    margin: 0 auto;
+    padding: 0 getGutterWidth( susy-get(columns) + 2, susy-get(gutter) );
+}
+
+
+/**
+ * ...
+*/
+%__layout-section-body-base {
+    min-height: layoutDims( "min-height" );
+}
+
+
+// ------------------------------------------------------------
+// SELECTORS
+// ------------------------------------------------------------
+/**
+ * Base styles for 'layout section'.
+*/
+#{$layout-section} {
+    width: 100%;
+    height: auto;
+}
+
+
+/**
+ * Shared styles for 'layout section header' and 'layout section body' elems.
+*/
+#{$layout-section-header},
+#{$layout-section-body} {
+    @include size(100% auto);
+}
+
+
+/**
+ * Styles for 'layout section header'.
+*/
+#{$layout-section-header} {
+    display: block; /// TEMP - Force selector to compile.
+}
+
+
+/**
+ * Styles for 'layout section header inner'.
+*/
+#{$layout-section-header}__inner {
+    @extend %__inset-grid-base;
+}
+
+
+/**
+ * Styles for 'layout section body'.
+*/
+#{$layout-section-body} {
+    display: block; /// TEMP - Force selector to compile.
+}
+
+
+/**
+ * Styles for 'layout section body inner'.
+*/
+#{$layout-section-body}__inner {
+    @extend %__inset-grid-base;
+    @extend %__layout-section-body-base;
+}

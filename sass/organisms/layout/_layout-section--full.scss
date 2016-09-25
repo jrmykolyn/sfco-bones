@@ -1,0 +1,39 @@
+// ------------------------------------------------------------
+// PLACEHOLDERS
+// ------------------------------------------------------------
+
+
+// ------------------------------------------------------------
+// SELECTORS
+// ------------------------------------------------------------
+/**
+ * Styles for 'full' variant of 'layout section body'.
+*/
+#{$layout-section-header}--full {
+	@extend #{$layout-section-header};
+}
+
+
+/**
+ * Styles for 'full' variant of 'layout section body inner'.
+*/
+#{$layout-section-header}--full__inner {
+    @extend %__full-grid-base;
+}
+
+
+/**
+ * Styles for 'full' variant of 'layout section body'.
+*/
+#{$layout-section-body}--full {
+    @extend #{$layout-section-header};
+}
+
+
+/**
+ * Styles for 'full' variant of 'layout section body inner'.
+*/
+#{$layout-section-body}--full__inner {
+    @extend %__full-grid-base;
+	@extend %__layout-section-body-base;
+}
