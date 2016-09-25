@@ -1,0 +1,13 @@
+/**
+ * SASS map that contains theme-specific settings for layout elements (eg. '.layout-section').
+ * Example settings include:
+ * - dimensions (height; width);
+ * - margins;
+ * - padding;
+ *
+*/
+$theme-layout-settings: (
+	dimensions: (
+		min-height: rem(400)
+	)
+);
