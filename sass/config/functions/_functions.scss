@@ -1,0 +1,39 @@
+/**
+ * Calculates the width of a single grid 'gutter'; returns result as a percentage.
+ *
+ * @param {Number} `$numCols` - Total number of grid columns.
+ * @param {Number} `$relativeGutterWidth` - Float representing the size of 1x 'gutter' relative to 1x grid column (eg. 0.25).
+ * @return {Percentage}
+ */
+@function getGutterWidth( $numCols, $relativeGutterWidth ) {
+	$col_width: ( 1 / $relativeGutterWidth );
+
+	$total_gutters: ( $numCols - 1 ) + ( $numCols * $col_width );
+	$indiv_gutter: 100% / $total_gutters;
+
+	@return $indiv_gutter;
+}
+
+
+/**
+ * Returns grid width-related data from the theme-specific grid settings.
+ * NOTE: `$theme-grid-settings` map defined in '/config/theme-settings/'.
+ *
+ * @param {String} `$prop`
+ * @return {Mixed}
+*/
+@function gridWidth( $prop ) {
+	@return map-get( map-get( $theme-grid-settings, "width" ), $prop );
+}
+
+
+/**
+ * Returns layout dimension-related data from the theme-specific layout settings.
+ * NOTE: `$theme-layout-settings` map defined in '/config/theme-settings/'.
+ *
+ * @param {String} `$prop`
+ * @return {Mixed}
+*/
+@function layoutDims( $prop ) {
+	@return map-get( map-get( $theme-layout-settings, "dimensions" ), $prop );
+}
