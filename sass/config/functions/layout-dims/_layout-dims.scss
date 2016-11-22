@@ -1,0 +1,10 @@
+/**
+ * Returns layout dimension-related data from the theme-specific layout settings.
+ * NOTE: `$theme-layout-settings` map defined in '/config/theme-settings/'.
+ *
+ * @param {String} `$prop`
+ * @return {Mixed}
+*/
+@function layoutDims( $prop ) {
+	@return map-get( map-get( $theme-layout-settings, "dimensions" ), $prop );
+}

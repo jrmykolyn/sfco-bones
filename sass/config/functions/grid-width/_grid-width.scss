@@ -1,0 +1,10 @@
+/**
+ * Returns grid width-related data from the theme-specific grid settings.
+ * NOTE: `$theme-grid-settings` map defined in '/config/theme-settings/'.
+ *
+ * @param {String} `$prop`
+ * @return {Mixed}
+*/
+@function gridWidth( $prop ) {
+	@return map-get( map-get( $theme-grid-settings, "width" ), $prop );
+}

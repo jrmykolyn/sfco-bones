@@ -1,0 +1,15 @@
+/**
+ * Calculates the width of a single grid 'gutter'; returns result as a percentage.
+ *
+ * @param {Number} `$numCols` - Total number of grid columns.
+ * @param {Number} `$relativeGutterWidth` - Float representing the size of 1x 'gutter' relative to 1x grid column (eg. 0.25).
+ * @return {Percentage}
+ */
+@function getGutterWidth( $numCols, $relativeGutterWidth ) {
+	$col_width: ( 1 / $relativeGutterWidth );
+
+	$total_gutters: ( $numCols - 1 ) + ( $numCols * $col_width );
+	$indiv_gutter: 100% / $total_gutters;
+
+	@return $indiv_gutter;
+}
