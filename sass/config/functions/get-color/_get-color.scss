@@ -1,0 +1,7 @@
+// TODO:
+// Add validation/error handling.
+@function getColor( $colorName, $colorSet: base ) {
+  $colors: map-get( $colorMap, $colorSet );
+
+  @return map-get( $colors, $colorName );
+}

@@ -1,7 +1,10 @@
-// Colours: Placeholder
-$color-placeholder: rgba(0,0,0,0.3);
-$color-placeholder--light: rgba(0,0,0,0.15);
-$color-placeholder--dark: rgba(0,0,0,0.45);
-
-// Colours: Base
-$color-black: #000;
+$colorMap: (
+  base: (
+    black: #000
+  ),
+  placeholder: (
+    base: rgba(0,0,0,0.3),
+    light: rgba(0,0,0,0.15),
+    dark: rgba(0,0,0,0.45)
+  )
+);
