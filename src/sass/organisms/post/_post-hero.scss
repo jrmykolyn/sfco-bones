@@ -1,0 +1,25 @@
+$post-hero: '.post-hero';
+$post-hero-content: #{$post-hero}-content;
+
+
+// ------------------------------------------------------------
+// PLACEHOLDERS
+// ------------------------------------------------------------
+
+
+// ------------------------------------------------------------
+// SELECTORS
+// ------------------------------------------------------------
+#{$post-hero} {
+	@include size(100% auto);
+	
+	background-color: getColor( light, placeholder ); /// TEMP
+}
+
+
+#{$post-hero-content} {
+	@extend %__inset-grid-base;
+	@extend %__layout-section-body-base; /// TEMP
+
+	background-color: getColor( light, placeholder ); /// TEMP
+}
