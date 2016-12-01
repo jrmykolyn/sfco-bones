@@ -15,15 +15,37 @@ var PATHS = {
 
 
 /* DECLARE TASKS */
+/**
+ * 'Default' Gulp task, executed when `gulp` is run from the
+ * command line with *no* arguments.
+ *
+ * The following tasks are executed *before* the contents of
+ * the `default` task.
+ * - `sass`
+ * - `html`
+ * - `scripts`
+ * - `watch`
+ */
 gulp.task( 'default', [ 'sass', 'html', 'scripts', 'watch' ], function() {
     console.log( 'INSIDE TASK: `default`' );
 } );
 
+
+/**
+ * Task copies all `*.html` files from the `src/` directory
+ * to the `dist/` directory.
+ */
 gulp.task( 'html', function() {
   return gulp.src( 'src/**/*.html' )
     .pipe( gulp.dest( 'dist' ) );
 } );
 
+
+/**
+ * Task converts contents of `styles.scss` file (plus any
+ * `*.scss` linked via `@import)` to vanilla CSS.
+ * Resulting CSS file is saved to `dist/` directory
+ */
 gulp.task( 'sass', function() {
     console.log( 'INSIDE TASK: `sass`' );
 
@@ -41,6 +63,11 @@ gulp.task( 'sass', function() {
         .pipe( gulp.dest( 'dist/css/' ) ); 
 } );
 
+
+/**
+ * Task minifies and renames all `*.js` files in `src/`
+ * directory. Resulting files are saved to `dist/` directory
+ */
 gulp.task( 'scripts', function() {
     return gulp.src( PATHS.js.src )
         .pipe( uglify() )
@@ -51,6 +78,11 @@ gulp.task( 'scripts', function() {
         .pipe( gulp.dest( PATHS.js.dest ) );
 } );
 
+
+/**
+ * Task watches for changes to files in `src/` directory,
+ * executes appropriate task.
+ */
 gulp.task( 'watch', function() {
     console.log( 'INSIDE TASK: `watch`' );
 
