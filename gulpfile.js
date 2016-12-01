@@ -7,6 +7,10 @@ var rename = require('gulp-rename');
 
 /* DECLARE VARS */
 var PATHS = {
+    styles: {
+        src: 'src/sass/',
+        dest: 'dist/css/',
+    },
     js: {
         src: 'src/js/**/*.js',
         dest: 'dist/js/'
@@ -49,7 +53,7 @@ gulp.task( 'html', function() {
 gulp.task( 'sass', function() {
     console.log( 'INSIDE TASK: `sass`' );
 
-    return gulp.src( 'src/sass/styles.scss' )
+    return gulp.src( PATHS.styles.src + 'styles.scss' )
         .pipe( sass(
             {
                 outputStyle: 'expanded',
@@ -60,7 +64,7 @@ gulp.task( 'sass', function() {
                 ]
             }).on( 'error', sass.logError )
         )
-        .pipe( gulp.dest( 'dist/css/' ) ); 
+        .pipe( gulp.dest( PATHS.styles.dest ) );
 } );
 
 
@@ -86,5 +90,5 @@ gulp.task( 'scripts', function() {
 gulp.task( 'watch', function() {
     console.log( 'INSIDE TASK: `watch`' );
 
-    gulp.watch( 'src/sass/**/*.scss', [ 'sass' ] );
+    gulp.watch( PATHS.styles.src + '**/*.scss', [ 'sass' ] );
 } );
