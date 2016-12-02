@@ -1,0 +1,26 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+$index-hero: '.index-hero';
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+#{$index-hero} {
+    @include size( 100% auto );
+
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    img {
+        max-width: 100%;
+    }
+}

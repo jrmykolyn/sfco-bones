@@ -1,0 +1,35 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+$pre-header: '.pre-header';
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+#{$pre-header} {
+    @include size( 100% auto );
+
+    display: block;
+    background-color: getColor( light, placeholder ); /// TEMP
+    margin: 0;
+    padding: 0 2rem;
+}
+
+
+#{$pre-header}__inner {
+    @include size( 100% auto );
+
+    min-height: 4rem;
+    max-width: 1024px; /// TEMP
+    display: block;
+    background-color: getColor( light, placeholder ); /// TEMP
+    margin: 0 auto;
+    padding: 0;
+}
