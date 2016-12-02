@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
+var concat = require('gulp-concat');
 
 
 /* DECLARE VARS */
@@ -74,6 +75,7 @@ gulp.task( 'sass', function() {
  */
 gulp.task( 'scripts', function() {
     return gulp.src( PATHS.js.src )
+        .pipe( concat( 'main.js' ) )
         .pipe( uglify() )
         .pipe( rename( function( path ) {
             path.basename += '.min';
