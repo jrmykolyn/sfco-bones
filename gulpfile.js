@@ -91,4 +91,5 @@ gulp.task( 'watch', function() {
     console.log( 'INSIDE TASK: `watch`' );
 
     gulp.watch( PATHS.styles.src + '**/*.scss', [ 'sass' ] );
+    gulp.watch( 'src/**/*.html', [ 'html' ] );
 } );
