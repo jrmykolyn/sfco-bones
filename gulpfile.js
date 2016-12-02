@@ -70,8 +70,8 @@ gulp.task( 'sass', function() {
 
 
 /**
- * Task minifies and renames all `*.js` files in `src/`
- * directory. Resulting files are saved to `dist/` directory
+ * Task concanenates, minifies and renames all `*.js` files in
+ * `src/`directory. Resulting files are saved to `dist/`.
  */
 gulp.task( 'scripts', function() {
     return gulp.src( PATHS.js.src )
