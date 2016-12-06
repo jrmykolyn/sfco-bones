@@ -1,0 +1,10 @@
+/**
+ * Given an 'initial width' value and an aspect ratio, function returns the corresponding height.
+ *
+ * @param {Number} `$initWidth`
+ * @param {List} `$ratio`
+ * @return {Percentage}
+ */
+@function getAspectHeight( $initWidth: 100%, $ratio: 1 1 ) {
+  @return #{$initWidth * ( nth( $ratio, 2 ) / nth( $ratio, 1 ) )};
+}
