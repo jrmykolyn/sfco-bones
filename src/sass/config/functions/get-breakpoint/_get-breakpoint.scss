@@ -5,6 +5,9 @@
  *
  * @param {String} `$feature`
  * @param {Number} `$breakpoint`
+ *
+ * TODO:
+ * - Validate presence of: `$breakpoint-settings` map; `$feature` map.
  */
 @function getBreakpoint( $feature, $breakpoint ) {
 	@return map-get( map-get( $breakpoint-settings, $feature ), $breakpoint );
