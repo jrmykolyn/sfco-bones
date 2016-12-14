@@ -1,0 +1,11 @@
+/**
+ * Returns whether or not a given `$breakpoint` has been set/whitelisted
+ * for the specified `$feature` within the `$breakpoint-settings` SASS map.
+ * NOTE: `$breakpoint-settings` map defined in `/config/theme-settings/`
+ *
+ * @param {String} `$feature`
+ * @param {Number} `$breakpoint`
+ */
+@function getBreakpoint( $feature, $breakpoint ) {
+	@return map-get( map-get( $breakpoint-settings, $feature ), $breakpoint );
+}

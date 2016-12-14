@@ -1,0 +1,20 @@
+// --------------------------------------------------
+/**
+ * `$breakpoint-settings` map allows for quick 'whitelisting'
+ * of breakpoints to be used by theme.
+ *
+ * Map and sub-maps (eg. 'min', 'max') can be queried using
+ * the `getBreakpoint()` function.
+ */
+$breakpoint-settings: (
+    min: (
+        480: true,
+        600: true,
+        768: true,
+        960: true,
+        1200: true
+    ),
+    max: (
+        500: true
+    )
+);
