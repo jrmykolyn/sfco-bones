@@ -5,10 +5,24 @@
  *
  * @param {String} `$feature`
  * @param {Number} `$breakpoint`
- *
- * TODO:
- * - Validate presence of: `$breakpoint-settings` map; `$feature` map.
  */
 @function getBreakpoint( $feature, $breakpoint ) {
-	@return map-get( map-get( $breakpoint-settings, $feature ), $breakpoint );
+	// Ensure that `$breakpoint-settings` global var. exists.
+	// Else, throw error.
+	@if global-variable-exists( 'breakpoint-settings' ) == false {
+		@error "Please ensure that the `$breakpoint-settings` map has been defined before using the `getBreakpoint` function";
+	}
+
+	// Fetch `feature`-specific breakpoint data from `breakpoint-settings`,
+	// store in `$breakpointMap`.
+	$breakpointMap: map-get( $breakpoint-settings, $feature );
+
+	// If the `$feature` arg. does not exist on `$breakpointSettings`:
+	// - throw error.
+	@if $breakpointMap == null {
+		@error 'Please ensure that the `#{$feature}` key exists on `$breakpoint-settings`, and is a map.';
+	}
+
+	// Return the value stored at the `breakpoint` key on `breakpointMap`.
+	@return map-get( $breakpointMap , $breakpoint );
 }
