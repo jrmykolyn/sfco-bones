@@ -61,7 +61,8 @@ gulp.task( 'sass', function() {
                 includePaths: [
                     'node_modules/normalize.css',
                     'node_modules/bourbon/app/assets/stylesheets',
-                    'node_modules/susy/sass'
+                    'node_modules/susy/sass',
+                    'node_modules/sfco-sass-utils'
                 ]
             }).on( 'error', sass.logError )
         )
